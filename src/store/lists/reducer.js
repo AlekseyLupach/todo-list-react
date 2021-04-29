@@ -15,10 +15,10 @@ export default function lists(state = initalState, action) {
             };
         }
 
-        case types.DELETE_LIST: {
+        case types.DELETE_LIST_SUCCESS: {
             return {
                 ...state,
-                lists: state.lists.filter((lists) => lists.id !== action.payload),
+                lists: [...state.lists.filter((lists) => lists.id !== action.payload)],
             };
         }
 

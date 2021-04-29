@@ -14,6 +14,9 @@ class Lists extends Component {
 
         getLists();
     }
+    // shouldComponentUpdate() {
+    //     return true;
+    // }
     render() {
         const { lists, addList, deleteList, status } = this.props;
 
