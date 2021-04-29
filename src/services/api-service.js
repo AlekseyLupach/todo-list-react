@@ -1,53 +1,50 @@
+import ContentType from '../constans/content-type';
+import HttpMethod from '../constans/http-method';
+
 class ApiService {
-    constructor(baseUrl) {
-        this.baseUrl = baseUrl;
+  constructor(baseUrl) {
+    this.baseUrl = baseUrl;
+  }
+
+  async get(url) {
+    const response = await fetch(`${this.baseUrl}/${url}`, { method: HttpMethod.GET });
+
+    if (!response.ok) {
+      throw Error(response.status);
     }
 
-    async get(url) {
-        const response = await fetch(`${this.baseUrl}/${url}`, { method: 'GET' });
+    return response.json();
+  }
 
-        if (!response.ok) {
-            throw Error(response.status);
-        }
+  async post(url, body) {
+    const response = await fetch(`${this.baseUrl}/${url}`, {
+      method: HttpMethod.POST,
+      body: JSON.stringify(body),
+      headers: {
+        'Content-Type': ContentType.APPLICATION_JSON,
+      },
+    });
 
-        const json = await response.json();
-
-        return json;
+    if (!response.ok) {
+      throw Error(response.status);
     }
 
-    async post(url, body) {
-        const response = await fetch(`${this.baseUrl}/${url}`, {
-            method: 'POST',
-            body: JSON.stringify(body),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
+    return response.json();
+  }
 
-        if (!response.ok) {
-            throw Error(response.status);
-        }
+  async delete(url) {
+    const response = await fetch(`${this.baseUrl}/${url}`, {
+      method: HttpMethod.DELETE,
+    });
 
-        const json = await response.json();
-
-        return json;
+    if (!response.ok) {
+      throw Error(response.status);
     }
 
-    async delete(url) {
-        const response = await fetch(`${this.baseUrl}/${url}`, {
-            method: 'DELETE',
-        });
-
-        if (!response.ok) {
-            throw Error(response.status);
-        }
-
-        const json = await response.json();
-
-        return json;
-    }
+    return response.json();
+  }
 }
 
-const apiService = new ApiService('http://localhost:3001');
+const apiService = new ApiService(process.env.REACT_APP_API_URL);
 
 export default apiService;
