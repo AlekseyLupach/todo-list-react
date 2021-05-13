@@ -6,6 +6,7 @@ import ListOfLists from './list-of-lists';
 import { addList, deleteList, getLists } from '../../store/lists/actions';
 import Loader from '../common/loader';
 import ActionStatus from '../../constans/action-status';
+import EntityType from '../../constans/entity-type';
 
 class Lists extends Component {
   componentDidMount() {
@@ -14,9 +15,6 @@ class Lists extends Component {
     getLists();
   }
 
-  // shouldComponentUpdate() {
-  //     return true;
-  // }
   render() {
     const {
       lists, addList, deleteList, status,
@@ -25,7 +23,7 @@ class Lists extends Component {
     return (
       <>
         <div className="add-form">
-          <AddEntityFrom onSubmit={addList} />
+          <AddEntityFrom onSubmit={addList} type={EntityType.LIST} />
         </div>
 
         <div className="lists">

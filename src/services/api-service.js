@@ -43,6 +43,19 @@ class ApiService {
 
     return response.json();
   }
+
+  async put(url, body) {
+    const response = await fetch(`${this.baseUrl}/${url}`, {
+      method: HttpMethod.PUT,
+      body: JSON.stringify(body),
+    });
+
+    if (!response.ok) {
+      throw Error(response.status);
+    }
+
+    return response.json();
+  }
 }
 
 const apiService = new ApiService(process.env.REACT_APP_API_URL);
