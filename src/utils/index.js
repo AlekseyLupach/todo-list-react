@@ -1,15 +1,15 @@
-export default function generateId(array) {
+export default function getLastOrder(array) {
   // получаем массив со всеми идентификаторами тасков
-  const ids = array.map((item) => item.id);
+  const orders = array.map((item) => item.order);
 
   // если у нас пустой массив, начинаем с единицы
-  if (!ids.length) {
+  if (!orders.length) {
     return 1;
   }
 
-  // находим максимальный id
-  const maxId = Math.max(...ids);
+  // находим максимальный orders
+  const maxOrder = Math.max(...orders);
 
   // возвращаем новый который больше максимального на единицу
-  return maxId + 1;
+  return maxOrder + 1;
 }

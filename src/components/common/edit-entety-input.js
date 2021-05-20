@@ -17,16 +17,20 @@ export default class EditEntityInput extends Component {
     });
   };
 
-  handleKeyDown = (e) => {
+  handleEdit = () => {
     const { value } = this.state;
     const { onEdit } = this.props;
 
+    onEdit(value);
+  };
+
+  handleKeyDown = (e) => {
     if (e.keyCode !== ENTER_KEY_CODE) {
       return;
     }
 
-    onEdit(value);
-  }
+    this.handleEdit();
+  };
 
   render() {
     const { value } = this.state;

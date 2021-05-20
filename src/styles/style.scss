@@ -81,6 +81,20 @@ header {
     display       : flex;
     flex-direction: column;
 
+    .header {
+        display        : flex;
+        justify-content: flex-end;
+        align-items    : center;
+
+        border-bottom : #d4d4d4 solid 2px;
+        margin-bottom : 20px;
+        padding-bottom: 20px;
+
+        img {
+            width: 50px;
+        }
+    }
+
     .delete-checked-wrapper {
         display        : flex;
         justify-content: flex-end;
@@ -367,41 +381,41 @@ header {
 }
 
 .spinner {
-    display: block;
-    border: 4px solid #d4d4d4;
-    border-bottom-color: transparent;
-    border-radius: 50%;
-    animation-name: spin;
-    animation-duration: 1s;
+    display                  : block;
+    border                   : 4px solid #d4d4d4;
+    border-bottom-color      : transparent;
+    border-radius            : 50%;
+    animation-name           : spin;
+    animation-duration       : 1s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-  }
-  
-  .loader {
-    display: flex;
-    align-items: center;
+}
+
+.loader {
+    display        : flex;
+    align-items    : center;
     justify-content: center;
-  
+
     background: rgba(1, 1, 1, 0.5);
-  
+
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-  }
-  
-  .loader .spinner {
-    width: 20px;
+    top     : 0;
+    left    : 0;
+    width   : 100vw;
+    height  : 100vh;
+}
+
+.loader .spinner {
+    width : 20px;
     height: 20px;
-  }
-  
-  @keyframes spin {
+}
+
+@keyframes spin {
     0% {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
-  
+
     100% {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  }
+}

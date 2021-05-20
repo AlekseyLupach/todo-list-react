@@ -2,34 +2,38 @@
   "lists": [
     {
       "name": "list 1",
+      "userId": "auth0|60a37a1f22684f0067d9d847",
       "id": 1
-    },
-    {
-      "name": "list 2",
-      "id": 2
-    },
-    {
-      "name": "list 3",
-      "id": 3
     }
   ],
   "tasks": [
     {
-      "newTask": {
-        "name": "11"
-      },
-      "id": "1",
-      "listId": "[object Object]"
+      "name": "task 1",
+      "checked": false,
+      "order": 1,
+      "listId": "1",
+      "id": 1
     },
     {
-      "name": "11",
+      "name": "task 2",
+      "checked": false,
+      "order": 2,
       "listId": "1",
-      "id": "lpksfBY"
+      "id": 2
     },
     {
-      "name": "11",
+      "name": "task 3",
+      "checked": false,
+      "order": 3,
       "listId": "1",
-      "id": "EnH2Zlm"
+      "id": 3
+    },
+    {
+      "name": "task 4",
+      "checked": false,
+      "order": 4,
+      "listId": "1",
+      "id": 4
     }
   ]
 }
